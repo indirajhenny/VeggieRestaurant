@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home,
+.menu,
+.cart,
+.login,
+.tracker {
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/*.menu {
+  /*display: flex;
+  height: 90vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 3rem;
+  background-image: url('/images/header-1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #000000;
+  font-size: 100px;
+}*/
+
+.cart {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  /*background-image: url('/images/header-1.jpg');*/
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: #000000;
+  font-size: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.login {
+  /*background-image: url('/images/header-1.jpg');*/
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #000000;
+  font-size: 100px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tracker {
+  /*background-image: url('/images/g7logo3.jpg');*/
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #000000;
+  font-size: 100px;
 }

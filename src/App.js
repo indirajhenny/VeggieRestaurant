@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Navbar from './components/Navbar'
+import Home from './components/pages/Home'
+import Menu from './components/pages/Menu'
+import Login from './components/pages/LoginPage'
+import Tracker from './components/pages/Tracker'
+import Cart from './components/pages/Cart'
+import Account from './components/pages/Account'
+import PrivateRoute from './components/routers/PrivateRoute'
+import PublicRoute from './components/routers/PublicRoute'
+import { AuthProvider } from "./helpers/auth"
+
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <AuthProvider>
+          <Switch>
+            <Route path='/' exact component = {Home} />
+            <Route path='/menu' exact component = {Menu} />
+            <Route path='/tracker' exact component = {Tracker} />
+            <Route path='/cart' exact component = {Cart} />
+            <PublicRoute path='/login' exact component = {Login} />
+            <PrivateRoute path='/account' exact component = {Account} />
+          </Switch>
+        </AuthProvider>
+      </Router>
+    </>
   );
 }
 
