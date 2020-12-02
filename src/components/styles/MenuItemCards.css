@@ -1,0 +1,75 @@
+/* Menu Item Card CSS */
+.menucard {
+  display: flex;
+  flex-direction: column;
+  /*height: inherit;*/
+  background-color: white;
+  color: white;
+  margin:5px;
+  width:100%;
+  height: 200px;
+  position: relative;
+  padding:5px
+}
+
+  /* DATE, LOCATION, ETC */
+.menuDetails {
+  text-align: left;
+  color: black;
+  font-size: 15.5px;
+  font-family: "Avenir Next";
+  padding: .7rem;
+  line-height: .2em;
+}
+
+.menuBack {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  top: 0; right: 0; bottom: 0; left: 0;
+  padding: .3rem;
+  overflow: scroll;
+}
+.menuTitle {
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-family: "Avenir Next";
+  padding: 5px;
+  line-height: normal;
+}
+.menuDescription {
+  text-align: center;
+  color: black;
+  font-size: 15.5px;
+  font-family: "Avenir Next";
+  padding: 5px;
+  line-height: normal;
+}
+.menucard button{
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.menuButton {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.menucard button:hover {
+  opacity: 0.7;
+}

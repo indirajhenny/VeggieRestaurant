@@ -1,0 +1,65 @@
+.employeeWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 700px;
+  /*height: 100%;*/
+  overflow-y: scroll;
+}
+.orderProcessedSide {
+  flex: 25%;
+  background-color: #DFE9AC;
+  padding: 10px;
+  /*height: 550px;*/
+
+}
+.orderMiddle {
+  flex: 25%;
+  background-color: #FBFCEB;
+  padding: 10px;
+    /*height: 550px;*/
+
+}
+/* Main column */
+.orderCompleteSide {
+  flex: 25%;
+  background-color: #DFE9AC;
+  padding: 10px;
+    /*height: 550px;*/
+}
+.orderPickedUpSide {
+  flex: 25%;
+  background-color: #FBFCEB;
+  padding: 10px;
+    /*height: 550px;*/
+}
+/* Float four columns side by side */
+/*.card-column {
+  float: left;
+  width: 25%;
+  padding: 10px 10px;
+  height: 550px;
+}*/
+.card-row {
+  margin: 0 -5px;
+}
+.card-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .employeeWrapper {
+    flex-direction: column;
+    height: 100%;
+    flex-wrap: wrap;
+  }
+  /*.card-column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }*/
+}

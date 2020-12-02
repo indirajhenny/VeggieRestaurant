@@ -1,0 +1,50 @@
+/* Menu Item Card CSS */
+.cartCard {
+  /*display: flex;*
+  flex-direction: column;*/
+  /*height: inherit;*/
+  background-color: white;
+  color: white;
+  margin:5px;
+  width:200px;
+  height: 220px;
+  position: relative;
+  padding:5px
+}
+
+  /* DATE, LOCATION, ETC */
+.cartDetails {
+  text-align: left;
+  color: black;
+  font-size: 15.5px;
+  font-family: "Avenir Next";
+  padding: .7rem;
+  line-height: .2em;
+}
+
+.cartBack {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  top: 0; right: 0; bottom: 0; left: 0;
+  padding: .3rem;
+  overflow: scroll;
+}
+.cartTitle {
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-family: "Avenir Next";
+  padding: 5px;
+  line-height: normal;
+}
+.cartDescription {
+  text-align: center;
+  color: black;
+  font-size: 15.5px;
+  font-family: "Avenir Next";
+  padding: 5px;
+  line-height: normal;
+}
