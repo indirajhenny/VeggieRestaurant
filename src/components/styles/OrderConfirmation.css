@@ -1,0 +1,56 @@
+.orderPage {
+  height: 100vh;
+  width: 100%;
+  background-color: #FBFCEB;
+  padding: 20px;
+}
+.orderOverviewHeading{
+
+}
+.orderContainer {
+  /*margin: 20px;*/
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 400px;
+  height: 400px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #DFE9AC;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /*height: 400px;*/
+  /*height: 100%;*/
+  overflow-y: scroll;
+}
+/*float 2 columns side by side*/
+.order-confirm-column {
+  float: left;
+  width: 50%;
+  padding: 10px 10px;
+}
+.order-confirm-row {
+  margin: 0 -5px;
+}
+.order-confirm-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.finalizeButton {
+  background-color: #87553B;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}

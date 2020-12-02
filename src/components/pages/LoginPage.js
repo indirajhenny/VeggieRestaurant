@@ -10,14 +10,10 @@ import {
 import Signup from '../SignUpComponents';
 import Login from '../LoginComponents';
 import Account from './Account';
+import EmployeePage from './EmployeePage';
 import { auth } from '../../services/firebase';
 import PrivateRoute from '../routers/PrivateRoute'
 import PublicRoute from '../routers/PublicRoute'
-
-/*export default function Login() {
-  return <h1 className='log-in'>LOGIN</h1>;
-}*/
-
 
 function LoginPage() {
   return (
@@ -31,6 +27,7 @@ function LoginPage() {
               <PublicRoute path="/login" component={Login} />
               <PublicRoute path="/signup" component={Signup} />
               <PrivateRoute exact path="/" component={Account} />
+
             </Switch>
           </AuthProvider>
         </Router>

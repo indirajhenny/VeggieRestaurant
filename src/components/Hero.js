@@ -7,15 +7,15 @@ import './styles/Hero.css';
 function Hero() {
   return (
     <div className='hero-container'>
-      <img src='../../../images/header-1.jpg' alt="veggies"/>
-      <h1>ADVENTURE AWAITS</h1>
-      <p>What are you waiting for?</p>
+      <img src='../../../images/veganheader.jpg' alt="veggies"/>
+      <h1>Welcome to VeggieRst</h1>
+      <p>Tasty, Sustainable, and Organically Produced Dishes</p>
       <div className='hero-btns'>
         <Button
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--large'>
-          GET STARTED
+          Sign In or Create an Account To Order
         </Button>
       </div>
     </div>

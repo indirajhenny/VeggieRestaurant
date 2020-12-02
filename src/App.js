@@ -7,13 +7,15 @@ import Login from './components/pages/LoginPage'
 import Tracker from './components/pages/Tracker'
 import Cart from './components/pages/Cart'
 import Account from './components/pages/Account'
+import EmployeePage from './components/pages/EmployeePage'
+import OrderConfirmation from './components/pages/OrderConfirmation'
 import PrivateRoute from './components/routers/PrivateRoute'
 import PublicRoute from './components/routers/PublicRoute'
 import { AuthProvider } from "./helpers/auth"
 
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+// add PrivateRoute for EmployeePage
 function App() {
   return (
     <>
@@ -27,6 +29,8 @@ function App() {
             <Route path='/cart' exact component = {Cart} />
             <PublicRoute path='/login' exact component = {Login} />
             <PrivateRoute path='/account' exact component = {Account} />
+            <PrivateRoute path='/employeepage' exact component={EmployeePage} />
+            <PrivateRoute path='/orderconfirm' exact component = {OrderConfirmation} />
           </Switch>
         </AuthProvider>
       </Router>
