@@ -1,5 +1,4 @@
 import React from 'react';
-//import '../../App.css';
 import '../styles/Menu.css';
 import MenuItemCard from '../MenuItemCards.js';
 import { useAuth } from "../../helpers/auth";
@@ -25,44 +24,30 @@ export default class Menu extends React.Component {
 
   // componentDidMount() is what runs once your component appears on the webpage
   componentDidMount() {
-    // Goal: Save every document in the workshops collection
-    // get data from specific docs when needed
     var dbRef = db.ref('menuitems/');
     const menuData = []
 
-    // Get the data from the firestore
     dbRef.once("value", function(snapshot) {
-      // gets all docs in menu collection and maps array of docs to querySnapshot
-      // docs. Puts every docs data into data variable
+
       snapshot.forEach(function(doc) {
         var menuItem = doc.val();
-        //console.log(menuItem.startTime);
-        //if (menuItem.startTime != null) {
           menuItem.key = doc.id;
           menuData.push(menuItem);
-        //}
       })
-      // component data is now an array of ordered wksp objects
       this.setState({componentData: menuData});
     }.bind(this));
-    //console.log(menuData)
   }
 
 
   render() {
-    //const menuCards = [];
     const mainDishCards = [];
     const appetizerCards = [];
     const dessertCards = [];
     const drinkCards = [];
     const { componentData } = this.state;
-    //var moment = require('moment');
 
     componentData.forEach((menuItemDetail) => {
-      //var dateObj = moment(new Date(menuItemDetail.startTime.seconds * 1000)).format('MM/DD/YY');
-      //var timeObj = moment(new Date(menuItemDetail.startTime.seconds * 1000)).format('hh:mm A');
       if (menuItemDetail.foodType === "appetizer") {
-        //console.log("appetizer found");
         appetizerCards.push(
           <MenuItemCard
             foodTitle={menuItemDetail.name}
@@ -74,7 +59,6 @@ export default class Menu extends React.Component {
 
       }
       if (menuItemDetail.foodType === "main dish") {
-        //console.log("main dish found");
         mainDishCards.push(
           <MenuItemCard
             foodTitle={menuItemDetail.name}
@@ -85,7 +69,6 @@ export default class Menu extends React.Component {
         );
       }
       if (menuItemDetail.foodType === "dessert") {
-        //console.log("main dish found");
         dessertCards.push(
           <MenuItemCard
             foodTitle={menuItemDetail.name}
@@ -96,7 +79,6 @@ export default class Menu extends React.Component {
         );
       }
       if (menuItemDetail.foodType === "drink") {
-        //console.log("main dish found");
         drinkCards.push(
           <MenuItemCard
             foodTitle={menuItemDetail.name}

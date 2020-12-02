@@ -13,7 +13,6 @@ export default class OrderConfirmation extends React.Component {
       user: auth().currentUser,
       componentData: [],
       totalPrice: 0
-      /*currentTab: 0,*/
     };
     this.completeOrder = this.completeOrder.bind(this);
   }
@@ -32,22 +31,14 @@ export default class OrderConfirmation extends React.Component {
       //testString += componentData[loopcnt++].title + ", "
       await db.ref("processedOrders/" + this.state.user.uid).push({
           foodItem: componentData[loopcnt++].title
-          //foodItem: testString
         });
-        //this.setState({ content: '' });
     }
-    /*await db.ref("processedOrders/" + this.state.user.uid + "/status/").push({
-        status: "order processed"
-      });*/
       var refer1 = db.ref("processedOrders/" + this.state.user.uid + "/status");
       // CHANGES
       refer1.set("Received Order");
       var refer2 = db.ref("processedOrders/" + this.state.user.uid + "/userId");
       refer2.set(this.state.user.uid);
       db.ref("processedOrders/" + this.state.user.uid + "/numberOfItems").set("" + loopcnt);
-      /*await db.ref.child("processedOrders/" + this.state.user.uid + "/status").setValue(
-          "order processed"
-        );*/
 
     // empty users cart aka empty user's /orders
     let orderRef = db.ref('orders/' + this.state.user.uid);
@@ -65,18 +56,13 @@ export default class OrderConfirmation extends React.Component {
 
       // Get the data from the firestore
       dbRef.once("value", function(snapshot) {
-        // gets all docs in orders/user collection and maps array of docs to querySnapshot
-        // docs. Puts every docs data into data variable
         snapshot.forEach(function(doc) {
           var orderItem = doc.val();
-          //console.log(menuItem.startTime);
-          //if (menuItem.startTime != null) {
             orderItem.key = doc.id;
             totalPrice += orderItem.price;
             orderData.push(orderItem);
-          //}
+
         })
-        // component data is now an array of ordered wksp objects
         this.setState({componentData: orderData});
         // add tax to total order
         totalPrice = totalPrice + (totalPrice * 0.065)

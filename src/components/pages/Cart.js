@@ -1,5 +1,4 @@
 import React from 'react';
-//import '../../App.css';
 import '../styles/Cart.css';
 import CartItemCard from '../CartItemCards.js';
 import { auth } from '../../services/firebase';
@@ -14,20 +13,11 @@ export default class Cart extends React.Component {
     this.state = {
       user: auth().currentUser,
       componentData: []
-      /*currentTab: 0,*/
     };
-    this.confirmOrder = this.confirmOrder.bind(this);
-  }
-
-  confirmOrder(currentTab) {
-    console.log("order is confirmed")
-    // open OrderConfirmation page IF user is logged in, else redirect user to Account page
 
   }
 
   componentDidMount() {
-    // Goal: Save every document in the workshops collection
-    // get data from specific docs when needed
     const userState = this.state.user;
     if(userState != null) {
       var dbRef = db.ref('orders/' + this.state.user.uid);
@@ -39,13 +29,11 @@ export default class Cart extends React.Component {
         // docs. Puts every docs data into data variable
         snapshot.forEach(function(doc) {
           var cartItem = doc.val();
-          //console.log(menuItem.startTime);
-          //if (menuItem.startTime != null) {
             cartItem.key = doc.id;
             cartData.push(cartItem);
           //}
         })
-        // component data is now an array of ordered wksp objects
+        // cart data is now assigned to componentData
         this.setState({componentData: cartData});
       }.bind(this));
     }

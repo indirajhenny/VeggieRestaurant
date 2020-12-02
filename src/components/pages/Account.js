@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../../helpers/auth"
 import { Link, useHistory } from "react-router-dom"
-//import '../../App.css';
 
-/*export default function Account() {
-  return <h1 className='cart'>Testing</h1>;
-}*/
 export default function Account() {
   const [error, setError] = useState("")
   const { currentUser, logout } = useAuth()

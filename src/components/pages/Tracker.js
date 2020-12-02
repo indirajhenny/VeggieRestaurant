@@ -14,19 +14,14 @@ export default class Tracker extends React.Component{
       user: auth().currentUser,
       status: null
     };
-    //this.handleLogout = this.handleLogout.bind(this);
   }
 
   componentDidMount() {
-    // Goal: Save every document in the workshops collection
-    // get data from specific docs when needed
     if (this.state.user != null){
       var dbRef = db.ref('processedOrders/' + this.state.user.uid + "/status");
       const processedOrders = []
-      //console.log(dbRef.child(key))
       dbRef.on("value", function(statusData) {
         var statusVal = statusData.val();
-        console.log(statusData.val())
         this.setState({status: statusVal});
       }.bind(this))
     }
